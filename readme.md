@@ -38,3 +38,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+# Configuracion al descargar con git
+
+Ingresar a la consola de Git o a la linea de comandos del sistema operativo e ingresar "git clone  https://github.com/rolodef1/blog.git", este comando debe ser ejecutado sobre la carpeta en la que se debe clonar el repositorio github.
+
+Una vez descargado el proyecto se debe ingresar la carpeta contenedora del proyecto y ejecutar el comando "composer install"
+
+Cuando todas las dependencias del proyecto se hayan descargado con composer, se debe:
+- Copiar el archivo .env.example y renombrarlo a .env, luego el archivo .env debe ser configurado con los valores necesarios.
+- Es necesario ejecutar el comando "php artisan key:generate" para establecer la constante APP_KEY del archivo .env
+- Para ejecutar todas las migraciones y que la base de datos se cree, es necesario ejecutar el comando "php artisan migrate".
+- Luego se debe ejecutar el comando "php artisan serve" e ingresar a la url mostrada en pantalla.
