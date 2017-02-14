@@ -15,7 +15,15 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::group(['prefix'=>'admin'],function(){
-	Route::resource('users', 'UsersController');
-	Route::resource('categories', 'CategoriesController');
+Route::group(['prefix'=>'admin'],function(){	
+	Route::group(['middleware' => ['auth']], function (){
+		Route::get('/', ['as'=>'admin.index',function () {
+			return view('welcome');
+		}]);
+		Route::resource('users', 'UsersController');
+		Route::resource('categories', 'CategoriesController');
+	});
+	Route::get('auth/login',['uses'=>'Auth\LoginController@showLoginForm','as'=>'auth.login']);
+	Route::post('auth/login',['uses'=>'Auth\LoginController@login','as'=>'auth.login']);
+	Route::get('auth/logout',['uses'=>'Auth\LoginController@logout','as'=>'auth.logout']);
 });

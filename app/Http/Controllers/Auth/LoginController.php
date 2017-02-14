@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -36,4 +37,17 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+    //REDIRECCIONA AL PATH SOLICITADO DESPUES DE AUTENTICAR
+    protected function redirectTo()
+    {
+        return '/admin';
+    }
+
+    //ESTE METODO SOBREESCRIBE A UN METODO DE IGUAL NOMBRE UBICADO EN AuthenticatesUsers
+    public function showLoginForm()
+    {
+        return view('admin.auth.login');
+    }
+
 }
