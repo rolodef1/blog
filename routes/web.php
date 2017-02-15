@@ -23,6 +23,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::resource('users', 'UsersController');
 		Route::resource('categories', 'CategoriesController');
 		Route::resource('tags', 'TagsController');
+		Route::resource('articles', 'ArticlesController');
 	});
 	Route::get('auth/login',['uses'=>'Auth\LoginController@showLoginForm','as'=>'auth.login']);
 	Route::post('auth/login',['uses'=>'Auth\LoginController@login','as'=>'auth.login']);

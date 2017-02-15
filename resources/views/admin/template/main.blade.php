@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>@yield('title','Default') | Panel de administracion</title>
 	<link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{asset('plugins/chosen/chosen.min.css')}}">
+	<link rel="stylesheet" href="{{asset('plugins/trumbowyg/ui/trumbowyg.min.css')}}">
 </head>
 <body>
 	@include('admin.template.partials.nav')
@@ -18,5 +20,8 @@
 	</footer>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>	
+	<script src="{{asset('plugins/chosen/chosen.jquery.min.js')}}"></script>	
+	<script src="{{asset('plugins/trumbowyg/trumbowyg.min.js')}}"></script>	
+	@yield('js')
 </body>
 </html>

@@ -43,6 +43,10 @@ class Article extends Model
 
     //RELACION MUCHOS A MUCHOS ENTRE ARTICULOS Y TAGS
     public function tags(){
-    	return $this->belongsToMany('App\Tag');
+    	return $this->belongsToMany('App\Tag')->withTimestamps();
+    }
+
+    public function scopeSearch($query,$title){
+        return $query->where('title','LIKE',"%$title%");
     }
 }

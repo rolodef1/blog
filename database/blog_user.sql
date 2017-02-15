@@ -16,17 +16,9 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`blog` /*!40100 DEFAULT CHARACTER SET ut
 
 USE `blog`;
 
-/*Data for the table `articles` */
-
-insert  into `articles`(`id`,`title`,`content`,`user_id`,`category_id`,`created_at`,`updated_at`,`slug`) values (1,'Mi inicio en Laravel','Buscando nuevas tecnologias para iniciar un proyecto personal, encontre recomendaciones sobre Laravel',1,1,'2017-02-12 22:22:08','2017-02-12 22:22:08','mi-inicio-en-laravel');
-
-/*Data for the table `categories` */
-
-insert  into `categories`(`id`,`name`,`created_at`,`updated_at`) values (1,'PHP','2017-02-12 22:16:51','2017-02-12 22:16:51');
-
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`name`,`email`,`password`,`type`,`remember_token`,`created_at`,`updated_at`) values (1,'Isaac Carrera','rolodef1@gmail.com','$2y$10$bzKbSMJXVucgNhXO2jH/L.k/MS3j13bhT3fYRD/UZdQXpUITHoosK','member',NULL,'2017-02-12 22:15:29','2017-02-12 22:15:29');
+insert  into `users`(`id`,`name`,`email`,`password`,`type`,`remember_token`,`created_at`,`updated_at`) values (1,'Rodrigo Isaac Carrera Estrada','rolodef1@gmail.com','$2y$10$F7UU2C9EeQ2xS5uuxD1wuup0FrxRW7qw93Y3lDbxU7xHtapJaaYi6','admin','kgea96CD4xt32g5vwFWVrgP59H5B4V7HzDXdxQnPDVll6RlVqwgWs8s3sepM','2017-02-14 15:48:39','2017-02-14 15:48:39');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
