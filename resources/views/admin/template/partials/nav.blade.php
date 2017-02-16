@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">Bit a Bit</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,7 +23,7 @@
         <li><a href="{{route('tags.index')}}">Tags</a></li>       
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Pagina principal</a></li>        
+        <li><a href="{{route('front.index')}}" target="_blank">Pagina principal</a></li>        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}} <span class="caret"></span></a>
           <ul class="dropdown-menu">

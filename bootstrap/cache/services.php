@@ -31,6 +31,7 @@
     27 => 'Collective\\Html\\HtmlServiceProvider',
     28 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
     29 => 'Laracasts\\Flash\\FlashServiceProvider',
+    30 => 'App\\Providers\\ComposerServiceProvider',
   ),
   'eager' => 
   array (
@@ -50,6 +51,7 @@
     13 => 'App\\Providers\\RouteServiceProvider',
     14 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
     15 => 'Laracasts\\Flash\\FlashServiceProvider',
+    16 => 'App\\Providers\\ComposerServiceProvider',
   ),
   'deferred' => 
   array (
