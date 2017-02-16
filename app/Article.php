@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 use Cviebrock\EloquentSluggable\Sluggable;//AGREGA FUNCIONALIDAD DE SLUGGABLE PARA URLS AMIGABLES
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Article extends Model
 {
     use Sluggable;//SE AGREGA PARA FUNCIONALIDAD SLUGGABLE
+    use SluggableScopeHelpers;
 
     //RETORNA UN ARRAY POR MEDIO DEL CUAL SLUGGABLE FUNCIONA
     public function sluggable()

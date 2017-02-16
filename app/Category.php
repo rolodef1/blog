@@ -6,11 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $table = 'categories';
-    protected $fillable = ['name'];
+	protected $table = 'categories';
+	protected $fillable = ['name'];
 
     //RELACION UNO A MUCHOS ENTRE CATEGORIA Y 
-    public function articles(){
-    	return $this->hasMany('App\Article');
-    }
+	public function articles(){
+		return $this->hasMany('App\Article');
+	}
+
+	public function scopeSearchCategory($query,$name){
+		return $query->where('name','=',$name); 
+	}
 }
