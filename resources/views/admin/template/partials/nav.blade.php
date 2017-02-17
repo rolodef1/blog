@@ -16,7 +16,9 @@
       @if(Auth::check())
       <ul class="nav navbar-nav">
         <li><a href="{{route('admin.index')}}">Inicio</a></li>
+        @if(Auth::user()->admin())
         <li><a href="{{route('users.index')}}">Usuarios</a></li>
+        @endif
         <li><a href="{{route('categories.index')}}">Categorias</a></li>
         <li><a href="{{route('articles.index')}}">Articulos</a></li>
         <li><a href="{{route('images.index')}}">Imagenes</a></li> 

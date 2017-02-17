@@ -1,5 +1,5 @@
 <ul class="collection with-header">
-	<li class="collection-header"><h4>Categorias</h4></li>
+	<li class="collection-header"><h4>{{trans('app.title_categories')}}</h4></li>
 	@foreach($categories as $category)
 	<li class="collection-item">
 		<a href="{{route('front.search.category',$category->name)}}">{{$category->name}}</a>

@@ -11,32 +11,39 @@
 |
 */
 
-Route::get('/',[
-	'as'=>'front.index', 
-	'uses'=>'FrontController@index'
-	]);
+Route::get('/',function(){
+	return view('front.home');
+});
 
-Route::get('categories/{name}',[
-	'as'=>'front.search.category', 
-	'uses'=>'FrontController@searchCategory'
-	]);
+Route::group(['prefix'=>'blog'],function(){
+	Route::get('/',[
+		'as'=>'front.index', 
+		'uses'=>'FrontController@index'
+		]);
+	Route::get('categories/{name}',[
+		'as'=>'front.search.category', 
+		'uses'=>'FrontController@searchCategory'
+		]);
 
-Route::get('tags/{name}',[
-	'as'=>'front.search.tag', 
-	'uses'=>'FrontController@searchTag'
-	]);
+	Route::get('tags/{name}',[
+		'as'=>'front.search.tag', 
+		'uses'=>'FrontController@searchTag'
+		]);
 
-Route::get('articles/{slug}',[
-	'as'=>'front.view.article', 
-	'uses'=>'FrontController@viewArticle'
-	]);
+	Route::get('articles/{slug}',[
+		'as'=>'front.view.article', 
+		'uses'=>'FrontController@viewArticle'
+		]);
+});
 
 Route::group(['prefix'=>'admin'],function(){	
 	Route::group(['middleware' => ['auth']], function (){
 		Route::get('/', ['as'=>'admin.index',function () {
 			return view('admin.index');
 		}]);
-		Route::resource('users', 'UsersController');
+		Route::group(['middleware' => ['admin']], function (){
+			Route::resource('users', 'UsersController');
+		});
 		Route::resource('categories', 'CategoriesController');
 		Route::resource('tags', 'TagsController');
 		Route::resource('articles', 'ArticlesController');

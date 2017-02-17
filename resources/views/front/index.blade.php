@@ -6,6 +6,8 @@
 <div class="row">
 	<div class="col s12 m8">
 		<div class="row">
+		<h3>{{trans('app.title_last_articles')}}</h3>
+		<h4>{{trans('app.welcome',['name'=>'Isaac'])}}</h4>
 			@foreach($articles as $article)
 			<div class="col s6 m4">
 				<div class="card">
